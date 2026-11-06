@@ -1,0 +1,8 @@
+numpy
+matplotlib
+numba
+ipywidgets
+ipython
+notebook
+nbformat
+Pillow
