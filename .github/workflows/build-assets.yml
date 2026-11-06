@@ -30,4 +30,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/demos assets/results assets/validation results/validation_L40_T2_energy.npz
           git diff --cached --quiet || git commit -m "assets: render GIF demos and simulation figures"
-          git push
+          git pull --rebase origin main
+          git push origin HEAD:main
