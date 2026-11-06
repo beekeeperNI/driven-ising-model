@@ -1,18 +1,26 @@
-# Publishing this project to GitHub
+# Repository publishing and maintenance
 
-The GitHub account currently accessible through ChatGPT has a repository named `resumeblock`, which is unrelated to this project. The available GitHub connector cannot create a new repository. For that reason, this prepared project has **not** been uploaded to an existing GitHub repository.
+**Published repository:** https://github.com/beekeeperNI/driven-ising-model
 
-To publish it, create a new **empty** repository named `driven-ising-model` under your GitHub account (do not initialize it with a README or license), download and unzip the project bundle, and from the extracted `driven-ising-model` directory run:
+The project currently contains a cleaned copy of the original simulator notebook, exploratory plots, generated GIF demonstrations, a numerical-validation draft, and a reproduction script. The GitHub Action at `.github/workflows/build-assets.yml` rebuilds the visual assets from the shared Metropolis core when its generation script or workflow changes.
+
+## Working locally
 
 ```bash
-git init
-git add .
-git commit -m "Organize driven Ising model portfolio and demos"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/driven-ising-model.git
-git push -u origin main
+git clone https://github.com/beekeeperNI/driven-ising-model.git
+cd driven-ising-model
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python tools/generate_demo_assets.py
 ```
 
-Replace `YOUR_USERNAME` with the account where you created the empty repository. (Leading whitespace before `git` commands is optional.) Or use GitHub Desktop to commit and publish the folder.
+The generator produces GIFs, PNG figures, and raw energy histories in `results/`. It may take several minutes, and the figures are exploratory rather than final validated scientific results.
 
-Do not choose an open-source license without considering whether group-generated source/materials are yours to license. The current README includes transparent source and AI-assistance notes.
+## Updating the research note
+
+Replace the working draft in `paper/validation_draft.md` with a fully reviewed report when the numerical checks and physical interpretation are complete. Do not confuse this section's older screenshot-derived numerical estimates with the newly regenerated GitHub validation data; compute any reported numbers from `results/validation_L40_T2_energy.npz`.
+
+## Authorship and license
+
+The shared Physics 77 baseline and collaborators' contributions should remain credited. The code and documentation used AI assistance; clarify independent contributions before using the repository as a formal academic work sample. No software license has been selected yet.
