@@ -16,7 +16,7 @@ Other actual animated demonstrations:
 - [Three-cycle hysteresis at P=50](assets/demos/hysteresis_P50.gif)
 - [Temperature comparison and field-step response](assets/demos/temperature_field_response.gif) — **field step**, not sinusoidal periodic driving
 
-The PNGs and GIFs in this repository were extracted from the uploaded project notebook or generated with its **existing** Metropolis core. No illustrative synthetic simulation data were substituted for the project results.
+The GIFs and PNGs in this repository are **regenerated** by [`tools/generate_demo_assets.py`](tools/generate_demo_assets.py), calling the existing Metropolis core from the original notebook. Parameters and random seeds are fixed in that script; these are not necessarily pixel-identical copies of earlier exploratory screenshots. No synthetic example measurements replace simulation output.
 
 ## Research question and model
 
@@ -35,7 +35,7 @@ The numerical convention is `J = kB = 1`, and **one Monte Carlo sweep (MCS) is `
 
 ![Exploratory period scan](assets/results/period_area_scan_preliminary.png)
 
-The notebook's first period scan at `L=40`, `T=2.0`, `h0=0.5` exhibits a nonmonotonic **mean absolute per-cycle loop integral** with a broad peak at intermediate periods. This is **preliminary**: the period dependence and precise peak require further burn-in, sampling, and observable-definition checks.
+The regenerated period scan at `L=40`, `T=2.0`, `h0=0.5` explores the **mean absolute per-cycle loop integral** over three seeds, 24 cycles per seed, discarding eight initial cycles. Its trends remain preliminary. This is **preliminary**: the period dependence and precise peak require further burn-in, sampling, and observable-definition checks.
 
 [See selected hysteresis loops](assets/results/selected_hysteresis_loops_preliminary.png)
 
@@ -50,13 +50,13 @@ The notebook's first period scan at `L=40`, `T=2.0`, `h0=0.5` exhibits a nonmono
 
 ## Numerical validation — current evidence
 
-At `L=40`, `T=2`, `J=1`, `h=0`, energy-relaxation runs compare **all-up** and **random** initial configurations. After an exploratory burn-in of `5,000` MCS, eight runs per initial-state group show similar retained energy-per-spin means (approximately `−1.7468` and `−1.7463`, values read from the plots), with no statistically detected late-window drift. These are checks of **the energy observable only** under this particular parameter choice.
+At `L=40`, `T=2`, `J=1`, `h=0`, energy-relaxation runs compare **all-up** and **random** initial configurations. Eight runs per initial-state group are generated for 10,000 MCS each, with 5,000 MCS discarded. The earlier screenshot-derived estimates (`−1.7468`, `−1.7463`) are **not** results of these newly regenerated GitHub runs. The experiment examines **the energy observable only** for this parameter choice.
 
 ![Ensemble energy relaxation: 250-MCS blocks](assets/validation/02_block_relaxation_L40_T2.png)
 
 [Raw energy trajectories](assets/validation/01_raw_energy_L40_T2.png) · [Retained run means](assets/validation/03_retained_energy_L40_T2.png) · [Late-drift check](assets/validation/04_late_drift_L40_T2.png)
 
-See [validation notes](docs/validation_status.md) for what was tested, what the figures support, and what remains open. **The underlying raw validation time-series and generation notebook were not included in the available project upload**, so these four graphics are preserved here as user-supplied figures, not claimed to be reproducible from `Simulator.ipynb` alone.
+See [validation notes](docs/validation_status.md) for what was tested, what the figures support, and what remains open. The original validation screenshots were provided without their raw histories or generating notebook. The figures in this GitHub version are **freshly generated**, using the original Metropolis update function and a separate energy diagnostic. Their raw energy histories are available in [`results/validation_L40_T2_energy.npz`](results/validation_L40_T2_energy.npz).
 
 ## Code and demos
 
@@ -75,7 +75,7 @@ pip install -r requirements.txt
 jupyter notebook notebooks/Simulator.ipynb
 ```
 
-Run the first code cell to define `simulator()` and the shared Metropolis core. Other exploratory cells build upon these definitions and, in some cases, variables created by earlier experiments. The original notebook includes interactive `ipywidgets` components, which **do not run on GitHub's static notebook preview**; open it locally in Jupyter. Exported GIFs do play directly in this README.
+Run the first code cell to define `simulator()` and the shared Metropolis core. Other exploratory cells build upon these definitions and, in some cases, variables created by earlier experiments. The original notebook includes interactive `ipywidgets` components, which **do not run on GitHub's static notebook preview**; open it locally in Jupyter. The GIFs render in this README. To regenerate the figures and energy histories, run `python tools/generate_demo_assets.py` from the repository root (CPU-intensive).
 
 **Current notebook limitations:** two original analysis cells previously saved `SystemError` results, and the notebook has not been rerun and tested end-to-end in a clean environment. Notebook outputs were cleared; the code itself was **not rewritten or claimed to be fixed**. Some expensive parameter sweeps may take significant time. We plan to separate a reusable simulation core from analysis in a later cleanup.
 
