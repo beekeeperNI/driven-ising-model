@@ -1,0 +1,62 @@
+[
+  {
+    "file": "L20_T1.2_S10000.npz",
+    "sha256": "563280bbe30a2202fb534bf2bd2e8f9a67da5eb63877ee7ba7a27117d5a7d916",
+    "bytes": 134435
+  },
+  {
+    "file": "L20_T2_S80000.npz",
+    "sha256": "d74d8ae41e02e7ebc6594a4d88e17512b8b9b849b11a5522d42af5c820185d89",
+    "bytes": 2675532
+  },
+  {
+    "file": "L20_T2.27_S80000.npz",
+    "sha256": "8995680ff493ca5f2bb7ba3cc8c0fc35be061771ba680f1ca65d1a9ece77b3f6",
+    "bytes": 3361414
+  },
+  {
+    "file": "L20_T3.2_S40000.npz",
+    "sha256": "014ae18377313360cf422fe5ce45ea8d1e7241de57b40ba6fecd06fb6d1595a1",
+    "bytes": 1704711
+  },
+  {
+    "file": "L40_T1.2_S80000.npz",
+    "sha256": "50a31be5848cbd826cf0b0dc09afb4f4fa36600387845644af1996760d7e4f09",
+    "bytes": 1715166
+  },
+  {
+    "file": "L40_T2_S40000.npz",
+    "sha256": "8ef024541f023208d7ade726f41ffbdee03aeaff3eb02cd586e097034d9ed0b7",
+    "bytes": 1651426
+  },
+  {
+    "file": "L40_T2.27_S80000.npz",
+    "sha256": "07252405b89c8fbfb68187d7b96147f6e404a177dd154395ef49796c8b69f8af",
+    "bytes": 4037776
+  },
+  {
+    "file": "L40_T3.2_S10000.npz",
+    "sha256": "d8d6006fb745db1758b73e79ed6c65c96146954e87635138d50c712cb5cf251f",
+    "bytes": 498486
+  },
+  {
+    "file": "L80_T1.2_S80000.npz",
+    "sha256": "34384c2e8044a6782ab026ec257791f14c6327d762aaace618d8247cbd096391",
+    "bytes": 2508511
+  },
+  {
+    "file": "L80_T2_S10000.npz",
+    "sha256": "e5d753b1a01376d4ea2c1f2a17059e62de628b5e30be7016a1d6cbdba624d75a",
+    "bytes": 551792
+  },
+  {
+    "file": "L80_T2.27_S80000.npz",
+    "sha256": "3a9ec980a39830a4345f6b923a3f41025a1f8e6c1338f43bf9a2352c52fcbc1b",
+    "bytes": 4884660
+  },
+  {
+    "file": "L80_T3.2_S10000.npz",
+    "sha256": "a298cd53a62244a599a2bf26e42ebe4bcde0caf41a54b64ee9c639a9699c74c8",
+    "bytes": 567291
+  }
+]

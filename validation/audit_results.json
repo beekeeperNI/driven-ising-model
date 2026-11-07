@@ -1,0 +1,56 @@
+{
+  "hamiltonian_flip_checks": 444,
+  "trajectory_comparisons": 24,
+  "trajectory_identical": true,
+  "enumeration_checks": [
+    {
+      "L": 3,
+      "configurations": 512,
+      "ground_energy": -18,
+      "energy_levels": 6
+    },
+    {
+      "L": 4,
+      "configurations": 65536,
+      "ground_energy": -32,
+      "energy_levels": 15
+    }
+  ],
+  "work_and_Q_checks": true,
+  "reused_notebook_names": {
+    "periods": [
+      3,
+      11
+    ],
+    "seeds": [
+      3,
+      8,
+      9
+    ],
+    "L": [
+      3,
+      9
+    ],
+    "T": [
+      3
+    ],
+    "n_cycles": [
+      3,
+      9
+    ],
+    "burn_in": [
+      3,
+      9
+    ]
+  },
+  "first_cell_sha256": "86658dd1fd8f04ecc6699336ff962e22e6fddec834b10812a5f038719da47e6c",
+  "protocol": {
+    "attempts_per_sweep": "L^2 random-site selections with replacement",
+    "boundaries": "periodic",
+    "field_update": "once before each sweep",
+    "observations": "magnetization and optional energy after sweep at h[t]",
+    "seed": "np.random.seed(seed) inside Numba core, before random initialization",
+    "initialization": "None => original initialize_lattice; provided lattice copied by wrapper",
+    "global_scope_mitigation": "Only first definition cell is executed; experiments pass explicit isolated configs."
+  }
+}

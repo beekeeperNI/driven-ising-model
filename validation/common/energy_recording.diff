@@ -1,0 +1,68 @@
+--- original_first_cell.py
++++ Part1_observed_source.py
+@@ -68,8 +68,24 @@
+ # ==========================================
+ 
+ @njit
++def energy_per_spin(lattice, h=0.0, J=1.0):
++    """只读取构型；周期边界下每条键计算一次，不调用随机数。"""
++    L = lattice.shape[0]
++    E = 0.0
++    for i in range(L):
++        for j in range(L):
++            s = lattice[i, j]
++            E -= J * s * (
++                lattice[(i + 1) % L, j]
++                + lattice[i, (j + 1) % L]
++            )
++            E -= h * s
++    return E / (L * L)
++
++
++@njit
+ def _simulation_core(lattice, random_start,
+-                     T, h0, period, n, J, seed):
++                     T, h0, period, n, J, seed, e_values=None):
+ 
+     # Seed Numba's internal random generator
+     np.random.seed(seed)
+@@ -100,6 +116,10 @@
+         h_values[t] = h
+         m_values[t] = spin_sum / N
+ 
++        # 可选观测：记录本次 sweep 完成后、同一外场 h 下的能量。
++        if e_values is not None:
++            e_values[t] = energy_per_spin(lattice, h, J)
++
+     return h_values, m_values
+ 
+ 
+@@ -108,7 +128,8 @@
+ # ==========================================
+ 
+ def simulator(L=40, T=2.0, h0=0.5, period=100,
+-              n=10, lattice=None, seed=None, J=1.0):
++              n=10, lattice=None, seed=None, J=1.0,
++              record_energy=False):
+ 
+     if L < 2 or T <= 0 or period < 1 or n < 1:
+         raise ValueError("Check L, T, period and n.")
+@@ -133,7 +154,16 @@
+         initial = np.array(initial, dtype=np.int8, copy=True)
+         random_start = False
+ 
+-    return _simulation_core(
++    # 缓冲区只在请求能量时分配；原核心仍返回 (h, m)。
++    e_values = (
++        np.empty(n * period, dtype=np.float64)
++        if record_energy else None
++    )
++    h_values, m_values = _simulation_core(
+         initial, random_start,
+-        T, h0, period, n, J, int(seed)
++        T, h0, period, n, J, int(seed), e_values
+     )
++
++    if record_energy:
++        return h_values, m_values, e_values
++    return h_values, m_values

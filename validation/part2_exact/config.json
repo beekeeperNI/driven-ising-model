@@ -1,0 +1,26 @@
+{
+  "sizes": [
+    3,
+    4
+  ],
+  "temperatures": [
+    1.2,
+    2.0,
+    2.27,
+    3.2
+  ],
+  "J": 1.0,
+  "h": 0.0,
+  "kB": 1.0,
+  "runs": 16,
+  "pilot_burn": 5000,
+  "pilot_measurements": 20000,
+  "maximum_burn": 10000,
+  "maximum_measurements": 80000,
+  "energy_tolerance": 0.004,
+  "abs_m_tolerance": 0.001,
+  "tolerance_rationale": "One part in 1000 of conventional bounding spans: e in [-2,2], abs(m) in [0,1]. These are not necessarily attained finite-L ranges (especially at odd L). Exploratory precision targets, not physical constants.",
+  "initial_state": "random",
+  "seed_base": 220000,
+  "extension_rule": "One extension only if any residual, burn-window, length-window, or late-drift interval exceeds its precision target. Keep every stage."
+}

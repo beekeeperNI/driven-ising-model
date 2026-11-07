@@ -1,0 +1,10 @@
+{
+  "exact_combinations_recomputed": 8,
+  "mc_stages_recomputed": 14,
+  "driving_files_recomputed": 14,
+  "driving_stages_recomputed": 10,
+  "identical_extension_prefixes": true,
+  "part1_statuses_preserved": true,
+  "part3_source_hashes_verified_locally": 12,
+  "all_checks_passed": true
+}

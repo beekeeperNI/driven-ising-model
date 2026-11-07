@@ -1,0 +1,32 @@
+{
+  "L": 40,
+  "T": 2.0,
+  "J": 1.0,
+  "h0": 0.5,
+  "periods": [
+    10,
+    20,
+    50,
+    75,
+    100,
+    125,
+    150,
+    200,
+    300
+  ],
+  "diagnostic_periods": [
+    10,
+    125,
+    300
+  ],
+  "runs": 8,
+  "pilot_cycles": 80,
+  "pilot_burn": 20,
+  "maximum_cycles": 200,
+  "maximum_burn": 50,
+  "work_tolerance": 0.02,
+  "abs_Q_tolerance": 0.02,
+  "rationale": "Exploratory resolution targets: 0.02 J/spin/cycle for work and two percentage points for |Q|. Not universal validation thresholds.",
+  "seed_base": 440000,
+  "extension_rule": "Only the three diagnostic periods, once, if any pilot diagnostic exceeds its precision target."
+}

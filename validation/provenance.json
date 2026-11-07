@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/beekeeperNI/driven-ising-model",
+  "base_commit": "a44bee0ee474f3f41cc57e4d1566fd4513d2b638",
+  "notebook_blob_sha": "c1122d9f543760837887a8886c21c94a43628758",
+  "original_first_cell_sha256": "86658dd1fd8f04ecc6699336ff962e22e6fddec834b10812a5f038719da47e6c",
+  "part1_observed_source_sha256": "30ab83a228e25fc33d702a924c82c03a4522a6ea2df77cb06ed96557a0e35a6c",
+  "part1_summary_sha256": "5b2726a91a8339434d7c73ba4045d29e3169fc286b5e4967e94e1259e14bb2b4"
+}
