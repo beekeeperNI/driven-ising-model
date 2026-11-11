@@ -2,7 +2,7 @@
 
 **Click a thumbnail to open an individual animation page.** No Jupyter session is required. Each GIF can also be previewed or downloaded separately.
 
-The eight GIFs cover all five types of dynamic display in the original Simulator notebook. The four period options in the multi-cycle hysteresis demo are exported individually. Static thumbnails keep the gallery lightweight.
+These eight GIFs were exported from an earlier state of the Simulator notebook and cover five types of dynamic display. The four period options in the multi-cycle hysteresis demo are exported individually. Static thumbnails keep the gallery lightweight.
 
 | Animation | Preview | GIF file |
 |---|---|---|
@@ -25,7 +25,7 @@ The eight GIFs cover all five types of dynamic display in the original Simulator
 
 ## Source and reproduction
 
-The original source cells are archived in [source_cells.json](source_cells.json). Parameters, frame counts, and file hashes are recorded in [manifest.json](manifest.json). The original notebook is unchanged.
+The source cells used for these exports are archived in [source_cells.json](source_cells.json). Parameters, frame counts, and file hashes are recorded in [manifest.json](manifest.json). **The repository's main [Simulator notebook](../../../notebooks/Simulator.ipynb) has since been updated to the November 2026 25-cell version; these saved GIFs have not been regenerated from that latest notebook.** They remain qualitative demonstrations, not independent validation of the final paper's numerical statistics.
 
 From the repository root, run:
 
@@ -33,7 +33,7 @@ From the repository root, run:
 python tools/export_notebook_gifs.py
 ```
 
-By default, this redraws the seven code-based GIFs and retains the published temperature-response GIF. To extract the original temperature-response frames again, provide the source notebook containing its saved HTML animation output:
+By default, this redraws the seven code-based GIFs and retains the published temperature-response GIF. To extract the temperature-response frames again, use an **earlier saved-output notebook** containing the original HTML animation, because the current public notebook was committed with its generated outputs cleared:
 
 ```sh
 python tools/export_notebook_gifs.py --notebook /path/to/Simulator.ipynb
