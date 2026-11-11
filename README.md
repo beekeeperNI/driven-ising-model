@@ -55,6 +55,18 @@ python scripts/reproduce_period_scan.py --mode smoke --output results/period_sca
 
 See [reproduction instructions and recovered settings](docs/reproducibility.md) for the full period scan. The [numerical validation documentation](docs/validation_status.md) records what the checks support and where sampling remains inconclusive, including very fast driving. Absolute loop integrals, signed field work, and dynamic order retain their distinct definitions.
 
+### Try the Simulator
+
+After installing the dependencies above, run:
+
+```sh
+python examples/quick_demo.py
+```
+
+The demo starts from all-up spins with `L=40`, `T=2`, `J=1`, `h0=0.5`, and seed `101`, runs eight cycles each at `P=10` and `P=125`, and saves [this comparison](assets/demos/quick_demo.png). Fast driving retains the initial magnetization bias over this window, while slower driving permits larger reversals and a delayed response to the field. The time plots show all 80 versus 1,000 MCS, and the response plots show cycles 6–8; these illustrative trajectories are not convergence-tested steady-state measurements.
+
+![Quick Demo: magnetization and normalized field versus time, alongside the hysteresis response, for P=10 and P=125](assets/demos/quick_demo.png)
+
 ## Project origin
 
 This work grew from a collaborative UC Berkeley Physics 77 capstone and a shared Ising simulation baseline, followed by my own extensions into temperature, finite size, and numerical reliability. AI assistance supported coding, debugging, visualization, and editing. See [provenance and reuse](docs/provenance.md); no software license has been selected pending review of the collaborative code's ownership and reuse rights.
