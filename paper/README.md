@@ -3,7 +3,7 @@
 **Nonequilibrium Dynamics of the Two-Dimensional Ising Model Under Periodic Magnetic Driving**  
 **Fengrui Yang** · November 2026 · 35-page Undergraduate Computational Physics Research Note
 
-**Manuscript status:** A final PDF was provided for publication, but **the binary PDF has not yet been committed to GitHub**. This is a publication logistics gap, not an unfinished study. Its intended repository path is `paper/research_note.pdf`. Avoid linking to that path as though it were already available.
+**[Read the complete Research Note (PDF)](research_note.pdf)** — 35 pages, November 2026.
 
 ## Abstract
 
@@ -35,6 +35,4 @@ Readers primarily interested in physics results can begin at **The Driving Perio
 
 The existing [`validation_draft.md`](validation_draft.md) is a **historical draft**, not the final manuscript.
 
-### For the repository maintainer
-
-Upload the supplied 35-page final PDF to `paper/research_note.pdf` using **Add file → Upload files** in the GitHub web interface, then replace this temporary publication-status note with a direct link. Upload the matching final Overleaf `.tex` source and image files separately if source publication is desired; the existing older LaTeX export should not be represented as the final source.
+The final PDF is stored in this folder as [`research_note.pdf`](research_note.pdf). The matching final Overleaf source has not been deposited in the repository; no earlier LaTeX export is represented as the authoritative source.
