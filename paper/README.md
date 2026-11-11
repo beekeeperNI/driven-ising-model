@@ -1,3 +1,40 @@
 # Research Note
 
-The final paper/PDF has not yet been provided or completed. `validation_draft.md` contains only the existing draft for the first numerical-validation section. Do not treat this folder as a finished manuscript.
+**Nonequilibrium Dynamics of the Two-Dimensional Ising Model Under Periodic Magnetic Driving**  
+**Fengrui Yang** · November 2026 · 35-page Undergraduate Computational Physics Research Note
+
+**Manuscript status:** A final PDF was provided for publication, but **the binary PDF has not yet been committed to GitHub**. This is a publication logistics gap, not an unfinished study. Its intended repository path is `paper/research_note.pdf`. Avoid linking to that path as though it were already available.
+
+## Abstract
+
+In this study, we investigate the nonequilibrium behavior of the two-dimensional Ising model under a periodically oscillating external magnetic field using Metropolis Monte Carlo simulations. We focus on how the magnetization dynamics and hysteresis response depend on the driving period, temperature, and lattice size.
+
+We observe a non-monotonic dependence of the hysteresis response on the driving period, with the largest response occurring at an intermediate period. As the temperature decreases, the period corresponding to the maximum response shifts toward larger values, consistent with a slower magnetization reversal process. By introducing the dynamic order parameter, we also distinguish persistent magnetization bias under fast driving from the more symmetric magnetization reversal observed at longer periods.
+
+Our finite-size investigation suggests that the hysteresis response is relatively insensitive to lattice size within the investigated range, while the dynamic order parameter exhibits stronger size dependence. Numerical validation supports the simulation implementation and several qualitative findings, although limitations in equilibration and periodic steady-state sampling remain.
+
+These results illustrate how thermal fluctuations, driving timescales, and finite-size effects influence the nonequilibrium dynamics of the Ising model.
+
+## Reading guide
+
+The research note comprises a cover, abstract, and the main text on:
+
+1. Project background and the Ising/Metropolis model.
+2. Numerical validation: implementation checks, exact Boltzmann comparison, Onsager–Yang reference, periodic-state diagnostics.
+3. Main physical investigations: driving period and hysteresis, dynamic order and initial states, temperature and period, and finite size.
+4. Limitations and scope of conclusions, conclusion, and references.
+
+Readers primarily interested in physics results can begin at **The Driving Period**, but the validation section is important when interpreting how strong each conclusion is.
+
+## Other project materials
+
+- [Latest 25-cell simulator](../notebooks/Simulator.ipynb) — source code preserved and generated outputs removed.
+- [Animation gallery](../assets/demos/notebook/README.md) — qualitative demonstrations associated with the research questions.
+- [Numerical validation documentation](../docs/validation_status.md).
+- [Repository README](../README.md) — current findings, restrictions, provenance, and **Further Research Directions**.
+
+The existing [`validation_draft.md`](validation_draft.md) is a **historical draft**, not the final manuscript.
+
+### For the repository maintainer
+
+Upload the supplied 35-page final PDF to `paper/research_note.pdf` using **Add file → Upload files** in the GitHub web interface, then replace this temporary publication-status note with a direct link. Upload the matching final Overleaf `.tex` source and image files separately if source publication is desired; the existing older LaTeX export should not be represented as the final source.
