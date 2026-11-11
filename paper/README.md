@@ -31,8 +31,8 @@ Readers primarily interested in physics results can begin at **The Driving Perio
 - [Latest 25-cell simulator](../notebooks/Simulator.ipynb) — source code preserved and generated outputs removed.
 - [Animation gallery](../assets/demos/notebook/README.md) — qualitative demonstrations associated with the research questions.
 - [Numerical validation documentation](../docs/validation_status.md).
-- [Repository README](../README.md) — current findings, restrictions, provenance, and **Further Research Directions**.
+- [Repository README](../README.md) — research questions, final-paper figures, reproduction instructions, and the **Author's Note**.
 
-The existing [`validation_draft.md`](validation_draft.md) is a **historical draft**, not the final manuscript.
+The existing [validation draft](../archive/notes/validation_draft.md) is a **historical draft**, not the final manuscript.
 
 The final PDF is stored in this folder as [`research_note.pdf`](research_note.pdf). The matching final Overleaf source has not been deposited in the repository; no earlier LaTeX export is represented as the authoritative source.

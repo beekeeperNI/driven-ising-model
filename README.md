@@ -1,121 +1,70 @@
 # Driven 2D Ising Model
 
-**Nonequilibrium Dynamics of the Two-Dimensional Ising Model Under Periodic Magnetic Driving**  
-**Fengrui Yang** · Undergraduate Computational Physics Research Note · November 2026
+**Fengrui Yang** · Undergraduate Computational Physics Research · November 2026
 
-A computational study of magnetization, hysteresis, dynamic order, temperature dependence, and finite-size effects in the periodically driven two-dimensional Ising model. This repository connects the **research note**, the **Metropolis simulator**, its **numerical checks**, and **animated demonstrations**.
+**What happens when a magnetic field reverses before a magnet has enough time to follow it?**
 
-**Read the full research note:** [**Nonequilibrium Dynamics of the Two-Dimensional Ising Model Under Periodic Magnetic Driving (PDF)**](paper/research_note.pdf)  
-[Latest simulator notebook](notebooks/Simulator.ipynb) · [Animation gallery](assets/demos/notebook/README.md) · [Numerical validation](docs/validation_status.md)
+In these simulations, rapid driving can leave the magnetization biased toward one direction over the observed time window. Slower driving gives the spins time to reverse, tracing hysteresis loops as their response lags behind the field. This project follows that competition across driving periods, temperatures, and lattice sizes.
 
-## Research question
+**[Read the full Research Note (PDF)](paper/research_note.pdf)**  
+[Animation gallery](assets/demos/notebook/README.md) · [Original research notebook](notebooks/Simulator.ipynb) · [Numerical validation](docs/validation_status.md)
 
-How do the driving period `P`, temperature `T`, and lattice size `L` affect the response of the ferromagnetic Ising model to an oscillating magnetic field?
+## How does the system respond to different driving periods?
 
-For spins `s_i = \pm1` on an `L\times L` square lattice with periodic boundary conditions,
+At `T=2`, `L=40`, and field amplitude `h0=0.5`, the hysteresis response grows and then decreases as the period increases, with a sampled maximum near `P=125` Monte Carlo sweeps. Intermediate driving allows substantial magnetization reversal while retaining a strong lag behind the field. The note also checks this trend using signed field work.
 
-\[
-\mathcal{H}(t)=-J\sum_{\langle i,j\rangle}s_i s_j-h(t)\sum_i s_i,\qquad
-h(t)=h_0\sin\!\left(\frac{2\pi t}{P}\right).
-\]
+![Absolute hysteresis integral versus driving period, extracted from Figure 6 of the Research Note](assets/figures/period_hysteresis.png)
 
-We take `J=k_B=1`. A Monte Carlo sweep (MCS) is `L^2` random-site attempted single-spin Metropolis flips. The field is fixed during each sweep; MCS is a numerical time unit, **not a calibrated physical time**.
+*Figure 6 from the final paper: absolute trapezoidal loop integral, individual seeded results, and ensemble mean ± standard error.*
 
-The main observables are magnetization per spin `m`, cycle-averaged dynamic order `Q`, and two carefully distinguished measures of the hysteretic response:
+Watch three cycles at `P=125`:
 
-- **Absolute trapezoidal loop integral `A`:** the absolute value of a discrete trapezoidal approximation to `-\oint m\,dh`, used in the early period and temperature scans.
-- **Signed discrete field work `W`:** `-\sum_j m_j(h_{j+1}-h_j)`, following the implemented field-update sequence, used in the dedicated work validation and finite-size analysis.
+![Three-cycle hysteresis at P=125](assets/demos/notebook/multi_cycle_hysteresis_P125.gif)
 
-These are related but **not numerically interchangeable**, particularly when absolute values, cycle averages, and integration rules differ.
+Compare [fast driving at P=10](assets/demos/notebook/multi_cycle_hysteresis_P10.md) with [P=300](assets/demos/notebook/multi_cycle_hysteresis_P300.md), or [browse all eight animations](assets/demos/notebook/README.md). These demonstrations illustrate the dynamics alongside the quantitative paper figures.
 
-## Key findings
+## How does temperature change the hysteresis response and dynamic order?
 
-These are **observations within the simulated parameter ranges**, not proofs of a dynamic phase transition or thermodynamic-limit behavior.
+Lower temperatures shift the strongest hysteretic response toward longer periods. The extended `T=1.5` scan reaches its sampled maximum near `P=600`. Lower-temperature runs also retain a larger cycle-averaged magnetization over a wider range of periods. A slower reversal process is a plausible explanation; its characteristic timescale was not measured directly.
 
-| Investigation | Main result | Interpretation / caveat |
-| --- | --- | --- |
-| **Driving period** | At `T=2.0`, `L=40`, `h_0=0.5`, hysteresis response is non-monotonic and peaks near `P=125` MCS on the sampled grid. | A dedicated signed-work validation also locates its sampled maximum at `P=125`; the exact continuous optimum was not measured. |
-| **Dynamic order** | `\langle |Q|\rangle` is large at short periods and becomes small as periods lengthen. | At `P=10`, strong magnetization bias is observed but the long-time statistical value remains sensitive to burn-in and observation time. |
-| **Temperature and period** | The period of maximal hysteretic response shifts to longer values at lower temperature; the extended `T=1.5` scan peaks around `P=600` MCS on its sampled grid. | Slower magnetization reversal is a plausible mechanism, but reversal time was not directly measured. |
-| **Finite size** | At `T=2.0, P=50`, `\langle|Q|\rangle` declines from about `0.39–0.40` (`L=20`) to `0.20–0.23` (`L=40`) and `0.10–0.11` (`L=80`). | Longer follow-up runs and alternative initial states support this finite-time size dependence. Signed work changes less dramatically, but is not strictly size-independent. Three sizes do not establish the infinite-size limit. |
+![Temperature-dependent hysteresis response, extracted from Figure 12 of the Research Note](assets/figures/temperature_hysteresis.png)
 
-### Selected plots
+*Figure 12 from the final paper: the absolute hysteresis integral at four temperatures. The extended low-temperature scan and dynamic-order comparison appear in Figures 13–14.*
 
-The following PNGs were generated for **earlier exploratory runs**; the parameter conventions and sampling may differ from the final note. Refer to the final research note for the definitive reported results.
+[Explore the multi-temperature animation](assets/demos/notebook/multi_temperature_period_explorer.md).
 
-- [Driving-period area scan (exploratory)](assets/results/period_area_scan_preliminary.png)
-- [Selected hysteresis loops (exploratory)](assets/results/selected_hysteresis_loops_preliminary.png)
-- [Temperature–period scan (exploratory)](assets/results/temperature_period_scan_preliminary.png)
-- [Finite-size comparison (exploratory)](assets/results/finite_size_scan_preliminary.png)
+## How does lattice size affect the observed behavior?
 
-## Animated demonstrations
+Across `L=20,40,80`, signed work follows a broadly similar period dependence, while the mean absolute dynamic order `⟨|Q|⟩` changes more strongly with size. Follow-up runs at `P=50` support the observed finite-time size dependence. Three sizes and finite observation windows do not determine the infinite-size or infinite-time limit.
 
-![Three-cycle hysteresis animation at P=125](assets/demos/hysteresis_P125.gif)
+![Finite-size dependence of signed work and absolute dynamic order, extracted from Figure F1 of the Research Note](assets/figures/finite_size_work_order.png)
 
-*Illustrative hysteresis response at `L=40`, `T=2`, `h_0=0.5`, `P=125`. The animation is not itself a numerical convergence test.*
+*Figure F1 from the final paper: signed work per spin and mean absolute cycle-averaged magnetization. Error bars are standard errors across independent seeds.*
 
-**[Open all eight animations in the gallery](assets/demos/notebook/README.md).** The gallery includes spin configurations, field-step response, three-cycle hysteresis at `P=10, 50, 125, 300`, a period sweep, and a multi-temperature explorer.
+## Explore and reproduce
 
-| Research idea | Accompanying demonstration |
-| --- | --- |
-| Spins evolving under a time-dependent field | [Spin configuration dynamics](assets/demos/notebook/spin_configuration_dynamics.md) |
-| Contrast fast and slower driving | [P=10](assets/demos/notebook/multi_cycle_hysteresis_P10.md) · [P=125](assets/demos/notebook/multi_cycle_hysteresis_P125.md) · [P=300](assets/demos/notebook/multi_cycle_hysteresis_P300.md) |
-| Explore different periods | [Period sweep](assets/demos/notebook/period_sweep_explorer.md) |
-| Compare responses across temperature and period | [Multi-temperature explorer](assets/demos/notebook/multi_temperature_period_explorer.md) |
-| Field-step relaxation (a *different protocol*) | [Temperature and field-step response](assets/demos/notebook/temperature_field_response.md) |
+The three static figures above are [unaltered image extractions from the final PDF](assets/figures/README.md). The [25-cell research notebook](notebooks/Simulator.ipynb) remains the original research record. A reusable simulator and a focused reproduction script accompany it:
 
-The saved GIFs were exported from earlier versions of the notebook. They are preserved as **qualitative demonstrations**; they have not been regenerated from the newly uploaded 25-cell notebook. In a period-sweep animation, consecutive frames are *different parameter selections*, not adjacent time steps.
-
-## Numerical validation and limitations
-
-The research note reports:
-
-- **Implementation:** 444 independent local-versus-full Hamiltonian energy-difference comparisons and 24 matched trajectory checks agreed.
-- **Zero-field initial-state/energy checks:** 8 of 12 tested `(T,L)` combinations met selected stability criteria; the others were inconclusive, especially near `T_c` and for `T=1.2, L=80`.
-- **Exact Boltzmann benchmarks:** 7/8 energy and 4/8 absolute-magnetization comparisons met their precision targets. These checks do not establish blanket convergence.
-- **Driven-period checks:** `P=125` and `P=300` met selected stability criteria at `T=2, L=40`; `P=10` remained inconclusive.
-- **Follow-up at `P=50`:** Eight seeds per initial-state type, 3,000 MCS burn-in, and 6,000 MCS measurement supported the observed decrease of `\langle|Q|\rangle` with size, without proving an infinite-time steady state.
-
-The repository also retains an **older, independently regenerated** single-condition energy-relaxation experiment. Its plots and data have different provenance from the broader validation reported in the PDF. See [Validation status and provenance](docs/validation_status.md).
-
-## Code, data, and reproducibility
-
-| Path | Purpose |
-| --- | --- |
-| [`notebooks/Simulator.ipynb`](notebooks/Simulator.ipynb) | **Latest uploaded simulator:** 25 code cells preserved; generated outputs cleared to keep the file lightweight |
-| [`assets/demos/notebook/`](assets/demos/notebook/README.md) | Eight existing GIFs, individual descriptions, parameters, manifests |
-| [`tools/generate_demo_assets.py`](tools/generate_demo_assets.py) | Generator for *historical exploratory* figures and some legacy animations |
-| [`tools/export_notebook_gifs.py`](tools/export_notebook_gifs.py) | Exporter for the existing gallery, with caveats in the gallery README |
-| [`assets/validation/`](assets/validation/) and [`results/`](results/) | Legacy single-condition energy-validation figures and numerical data |
-| [Final research note (PDF)](paper/research_note.pdf) | Complete manuscript, including numerical validation, physical results, limitations, and references |
-
-To run the notebook locally:
-
-```bash
-git clone https://github.com/beekeeperNI/driven-ising-model.git
-cd driven-ising-model
+```sh
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-jupyter notebook notebooks/Simulator.ipynb
+python -m unittest discover -s tests -v
+python scripts/reproduce_period_scan.py --mode smoke --output results/period_scan_smoke
 ```
 
-Run the first code cell to define the core simulator. The subsequent cells reflect an exploratory research workflow, may depend on variables defined by other cells, and **have not been tested end-to-end in a clean session**. Some cells use `%matplotlib widget`, which requires the `ipympl` backend, and interactive widgets do not run in GitHub's static preview. Saved animations are available without running Jupyter. The legacy image-generation script does **not** reproduce every final paper figure.
+See [reproduction instructions and recovered settings](docs/reproducibility.md) for the full period scan. The [numerical validation documentation](docs/validation_status.md) records what the checks support and where sampling remains inconclusive, including very fast driving. Absolute loop integrals, signed field work, and dynamic order retain their distinct definitions.
 
-## Project provenance and scope
+## Project origin
 
-The project began with a collaborative **UC Berkeley Physics 77 capstone**, including a shared Ising-model simulation baseline and Group A's exploration of periodic magnetic driving. This repository documents a personal extension of the driving-period study into temperature, numerical validation, initial-state behavior, and finite-size comparisons. It does **not** claim that the common starting point was solely authored work.
+This work grew from a collaborative UC Berkeley Physics 77 capstone and a shared Ising simulation baseline, followed by my own extensions into temperature, finite size, and numerical reliability. AI assistance supported coding, debugging, visualization, and editing. See [provenance and reuse](docs/provenance.md); no software license has been selected pending review of the collaborative code's ownership and reuse rights.
 
-AI-assisted coding, troubleshooting, plotting, and writing support were used. Scientific interpretations remain framed by the checks and limitations actually reported. No software license has been selected; do not assume permission to redistribute or incorporate this code into another project.
+## Author's Note
 
-## Further Research Directions
+I have to admit that this project has grown far beyond what I initially expected. What began as an investigation of how the driving period affects magnetization gradually led me to questions about temperature, finite-size effects, and eventually the reliability of the numerical methods themselves.
 
-I have to admit that the length of this research note has gone far beyond my initial expectations. During the investigation, I encountered several interesting questions that I would like to explore further. However, I have decided to leave some of them unresolved for now, since investigating all of them would significantly extend the scope of this project.
+During the investigation, I encountered many interesting questions that I could not fully answer within the scope of this note. In particular, I am interested in why a rapidly oscillating magnetic field appears to promote the development of strong magnetization under certain low-temperature conditions, and how the dynamic order parameter behaves as we approach larger lattice sizes.
 
-For future work, I think an important direction would be to further improve and validate the numerical methods. Although our current implementation has passed several consistency checks, the results under certain conditions remain inconclusive. These uncertainties may be related to insufficient equilibration, limited sampling, or numerical implementation details that we have not fully investigated. We could further optimize the existing code, introduce more systematic convergence tests, and compare the results with independent implementations to better understand the reliability of our simulations across different physical conditions.
+I also realized that obtaining a numerical result and understanding how much we can trust it are two different problems. Some of the observations in this project remain inconclusive, and I would like to revisit them with better numerical methods and a more detailed investigation of spin configurations and domain growth.
 
-Beyond these numerical questions, I am particularly interested in two possible directions. The first is to investigate how the dynamic order parameter `Q` behaves over a wider range of lattice sizes, especially in the region where we observed significant finite-size dependence.
-
-The second is to further investigate the behavior of the system under very short driving periods. Our preliminary results suggest that, at certain low temperatures, a rapidly oscillating external field may accelerate the development of strong magnetization compared with the zero-field case. This is particularly interesting because the external field alternates between positive and negative values, yet the system can still maintain a strong magnetization in one direction.
-
-A more detailed investigation of the spin configurations, domain growth, and magnetization reversal dynamics could help us understand whether this behavior is a genuine effect of periodic driving or is mainly associated with the finite observation time and the system's initial evolution.
+For now, I hope this note serves as a record of both the results I obtained and the questions that emerged along the way.

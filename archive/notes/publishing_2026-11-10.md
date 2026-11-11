@@ -1,3 +1,9 @@
+# Historical publishing notes
+
+Archived during the portfolio reorganization. The status statements below describe the earlier repository; relative links have been adjusted for this location. See [current reproduction instructions](../../docs/reproducibility.md).
+
+---
+
 # Publishing and maintenance
 
 **Repository:** https://github.com/beekeeperNI/driven-ising-model
@@ -5,12 +11,12 @@
 ## Publication status — 10 November 2026
 
 - **Updated on GitHub:** the latest 25-cell `notebooks/Simulator.ipynb` (outputs cleared), a reorganized project README ending in **Further Research Directions**, the research-note abstract/reading guide, numerical-validation overview, updated dependency list, and revised animation provenance notes.
-- **Research note uploaded and organized:** the final 35-page PDF is now at [`paper/research_note.pdf`](paper/research_note.pdf). It was moved from the repository root without changing its binary Git blob.
+- **Research note uploaded and organized:** the final 35-page PDF is now at [`paper/research_note.pdf`](../../paper/research_note.pdf). It was moved from the repository root without changing its binary Git blob.
 - **Not included as final source:** the complete latest Overleaf `.tex` tree. An older LaTeX export exists in the conversation files but is not necessarily identical to the current 35-page PDF.
 
 ### PDF organization
 
-The PDF is available directly from [`paper/research_note.pdf`](paper/research_note.pdf), and the repository home page links to it. The root-level duplicate was removed in the same commit. Only the matching final Overleaf source remains unpublished.
+The PDF is available directly from [`paper/research_note.pdf`](../../paper/research_note.pdf), and the repository home page links to it. The root-level duplicate was removed in the same commit. Only the matching final Overleaf source remains unpublished.
 
 ## Code and animation consistency
 
@@ -36,7 +42,7 @@ The historical generator `tools/generate_demo_assets.py` regenerates *explorator
 - `P=10` long-time behavior was inconclusive under the reported stability tests.
 - Three lattice sizes and finite observation windows do not prove a thermodynamic limit.
 
-These distinctions are explained in the [main README](README.md), [paper overview](paper/README.md), and [validation documentation](docs/validation_status.md).
+These distinctions are explained in the [main README](../../README.md), [paper overview](../../paper/README.md), and [validation documentation](../../docs/validation_status.md).
 
 ## Project provenance
 

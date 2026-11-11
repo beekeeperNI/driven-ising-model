@@ -1,22 +1,19 @@
-# Figures and numerical-method notes
+# Figure and data provenance
 
-The separately downloadable project archive contains originally extracted figures and animations. The GitHub `assets/` directory is regenerated from the original notebook's shared Metropolis core by `tools/generate_demo_assets.py`; the new figures use documented seeds and parameters and need not match earlier screenshots pixel-for-pixel.
+## Final-paper figures
 
-| Figure | Source in original notebook | Interpretation |
-| --- | --- | --- |
-| Period area scan | original period-scan method; rebuilt script | L=40, T=2, h0=0.5; 3 seeds, 24 cycles (8 discarded); mean absolute trapezoidal loop integral |
-| Selected hysteresis loops | old cell 4 | P=10,125,300; qualitative |
-| Temperature-period scan | rebuilt script | Same absolute loop integral convention; selected temperatures, exploratory sampling |
-| Finite-size comparison | rebuilt script | Signed work `−Σm Δh` and absolute cycle-averaged magnetization; 3 lattice sizes |
-| Temperature field response GIF | existing sweep core | External-field **step**, not sinusoidal driving; newly rendered animation |
-| Hysteresis GIFs | existing simulator | Newly rendered three-cycle GIFs at P=50,125 |
+The three images displayed in the root README come directly from the unchanged [final PDF](../paper/research_note.pdf): Figure 6 (PDF page 20), Figure 12 (page 27), and Figure F1 (page 30). They were extracted from the PDF's embedded images at native resolution without redrawing curves. [Extraction records and hashes](../assets/figures/README.md) distinguish them from new simulation output.
 
-## Critical observable caveat
+## Animated demonstrations
 
-The original cells mix several distinct quantities: mean absolute single-cycle loop integrals, mean signed work `−∮m dh`, and sometimes the integral of phase-averaged loops. These are not interchangeable in finite noisy systems. Before writing a quantitative conclusion, standardize the sign, sampling time, discretization of the integral, burn-in protocol, and seed averaging.
+The [eight-animation gallery](../assets/demos/notebook/README.md), its source-cell archive, previews, manifests, and GIF files are preserved. These are earlier illustrative exports; they were not rerendered during this portfolio update. They accompany the research story and do not replace quantitative figures or establish equilibration.
 
-The field is updated at the beginning of each MCS and magnetization recorded after the sweep. One MCS is L² random-site flip attempts; this is algorithmic time and has no calibrated physical-time conversion.
+## Historical exploratory plots and data
 
-## Reproduction
+The files in `assets/results/`, `assets/validation/`, and `results/validation_L40_T2_energy.npz` remain unchanged. They come from the earlier `tools/generate_demo_assets.py` workflow and are not substituted for final-paper results. [Archived generation notes](../archive/notes/legacy_figures_and_methods.md) document their settings. The legacy generator can overwrite its own old outputs; it is not the new reproduction entry point.
 
-Run `python tools/generate_demo_assets.py` from the repository root after installing `requirements.txt`. This produces the README GIFs, four exploratory results plots, four energy-equilibration plots, and `results/validation_L40_T2_energy.npz`. The energy runs use the same existing `_metropolis_sweep_fast()` routine and separately compute the full zero-field Hamiltonian after each MCS. This is a new, independent energy-logging wrapper, **not** a rerun of the exact original user-supplied validation notebook.
+## New reproduction outputs
+
+The [period-scan script](../scripts/reproduce_period_scan.py) matches settings recovered from notebook cell 5 for Figure 6. Only its explicitly labeled smoke mode was executed for this update. [Cached smoke measurements](../results/reproduction_checks/smoke_20261110/) are software-check artifacts, not additions to the paper's physical evidence. Full-run output is created in a separate directory on request.
+
+Missing original machine-readable measurements and execution metadata prevent a claim of exact numerical recovery of every published figure. See [reproducibility](reproducibility.md) and [validation status](validation_status.md).

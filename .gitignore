@@ -5,3 +5,7 @@ __pycache__/
 .DS_Store
 .pytest_cache/
 *.mp4
+
+# Local reproduction runs; the committed smoke evidence lives in reproduction_checks/.
+results/period_scan_smoke/
+results/period_scan_full/

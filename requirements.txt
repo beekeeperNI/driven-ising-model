@@ -1,10 +1,13 @@
+# Numerical implementation and plotting; see docs/quality_checks.json for tested versions.
 numpy
-matplotlib
 numba
+matplotlib
+scipy
+
+# Preserved research notebook and existing GIF exporters.
 ipywidgets
+ipympl
 ipython
 notebook
 nbformat
 Pillow
-scipy
-ipympl
