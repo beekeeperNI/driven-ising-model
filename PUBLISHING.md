@@ -5,18 +5,12 @@
 ## Publication status — 10 November 2026
 
 - **Updated on GitHub:** the latest 25-cell `notebooks/Simulator.ipynb` (outputs cleared), a reorganized project README ending in **Further Research Directions**, the research-note abstract/reading guide, numerical-validation overview, updated dependency list, and revised animation provenance notes.
-- **Still to upload:** the supplied 35-page **final PDF**, intended as `paper/research_note.pdf`. The GitHub connector supports text-file updates but did not expose a way to transfer the attached binary PDF directly.
+- **Research note uploaded and organized:** the final 35-page PDF is now at [`paper/research_note.pdf`](paper/research_note.pdf). It was moved from the repository root without changing its binary Git blob.
 - **Not included as final source:** the complete latest Overleaf `.tex` tree. An older LaTeX export exists in the conversation files but is not necessarily identical to the current 35-page PDF.
 
-### One remaining PDF upload
+### PDF organization
 
-1. Download the final `research_note.pdf` from the project handoff in the ChatGPT conversation.
-2. Open [the paper folder](https://github.com/beekeeperNI/driven-ising-model/tree/main/paper) in GitHub.
-3. Select **Add file → Upload files** (or **Upload files**), and upload the file as `paper/research_note.pdf`.
-4. Commit on `main`. Confirm the file appears and renders in GitHub.
-5. In `README.md` and `paper/README.md`, replace the temporary “PDF upload pending” notice with a link to `paper/research_note.pdf`.
-
-If the final Overleaf project is shared later, publish its matching `.tex` and `figures/` files together; do **not** attach the earlier LaTeX export as though it produced the newly edited PDF.
+The PDF is available directly from [`paper/research_note.pdf`](paper/research_note.pdf), and the repository home page links to it. The root-level duplicate was removed in the same commit. Only the matching final Overleaf source remains unpublished.
 
 ## Code and animation consistency
 
