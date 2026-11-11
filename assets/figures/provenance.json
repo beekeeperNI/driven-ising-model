@@ -1,0 +1,43 @@
+{
+  "source": "paper/research_note.pdf",
+  "source_git_blob": "fa9378492a8c1d173145b8c05c28b081d8e0eb56",
+  "source_sha256": "d7553e8c20dadc7f08aa5959c89dab718757aaaa0e831a9f34cf5221726c2eca",
+  "figures": [
+    {
+      "file": "period_hysteresis.png",
+      "pdf_page": 20,
+      "figure": "6",
+      "pdf_image_name": "Im3.png",
+      "pixels": [
+        769,
+        546
+      ],
+      "sha256": "8b22055b80f83225cf53d2cb12e193d3b11da4b3cc4b0fbff5b8c630e2172685",
+      "method": "Lossless extraction of the embedded image; no resizing or redrawing."
+    },
+    {
+      "file": "temperature_hysteresis.png",
+      "pdf_page": 27,
+      "figure": "12",
+      "pdf_image_name": "Im9.png",
+      "pixels": [
+        778,
+        546
+      ],
+      "sha256": "cf7639f8a085df1eb4fc462c318b60659ea7a8988c113940ab22cd1c79b82ac4",
+      "method": "Lossless extraction of the embedded image; no resizing or redrawing."
+    },
+    {
+      "file": "finite_size_work_order.png",
+      "pdf_page": 30,
+      "figure": "F1",
+      "pdf_image_name": "Im12.png",
+      "pixels": [
+        1290,
+        495
+      ],
+      "sha256": "bf1565a3415bc62c1746e6d415981511c9695d2e45a68b077156f02c38140938",
+      "method": "Lossless extraction of the embedded image; no resizing or redrawing."
+    }
+  ]
+}
