@@ -1,0 +1,19 @@
+{
+  "tests_passed": 13,
+  "seeded_original_vs_extracted_cases": 36,
+  "original_function_ASTs_identical": true,
+  "independent_local_energy_checks": 156,
+  "smoke_runs": 4,
+  "smoke_total_MCS": 420,
+  "smoke_attempted_flips": 15120,
+  "cached_redraw_identical_statistics": true,
+  "raw_cache_unchanged_on_redraw": true,
+  "full_period_scan_run": false,
+  "python": "3.14.7",
+  "packages": {
+    "numpy": "2.5.2",
+    "numba": "0.68.1",
+    "matplotlib": "3.11.1",
+    "scipy": "1.18.1"
+  }
+}

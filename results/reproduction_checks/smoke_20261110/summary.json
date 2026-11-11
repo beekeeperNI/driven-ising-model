@@ -1,0 +1,78 @@
+{
+  "mode": "smoke",
+  "source": "Notebook cell 5 (zero-based), final PDF Figure 6",
+  "comparison": "Recovered protocol; original Figure 6 raw measurements unavailable.",
+  "error_bars": "SEM across independent-run means; common seeds across periods",
+  "results": [
+    {
+      "period": 10,
+      "absolute_trapezoidal_integral": {
+        "mean": 0.10413554309978561,
+        "sem": 0.017680741541355807,
+        "run_means": [
+          0.12181628464114141,
+          0.0864548015584298
+        ]
+      },
+      "signed_field_work": {
+        "mean": 0.033802358164032424,
+        "sem": 0.10897522582548627,
+        "run_means": [
+          0.1427775839895187,
+          -0.07517286766145385
+        ]
+      },
+      "mean_abs_Q": {
+        "mean": 0.8861111111111111,
+        "sem": 0.016666666666666607,
+        "run_means": [
+          0.8694444444444445,
+          0.9027777777777777
+        ]
+      },
+      "signed_Q": {
+        "mean": -0.8861111111111111,
+        "sem": 0.016666666666666607,
+        "run_means": [
+          -0.8694444444444445,
+          -0.9027777777777777
+        ]
+      }
+    },
+    {
+      "period": 25,
+      "absolute_trapezoidal_integral": {
+        "mean": 0.2526923338771088,
+        "sem": 0.09431496094197105,
+        "run_means": [
+          0.1583773729351378,
+          0.3470072948190799
+        ]
+      },
+      "signed_field_work": {
+        "mean": 0.22783578649756003,
+        "sem": 0.050577266079853425,
+        "run_means": [
+          0.1772585204177066,
+          0.27841305257741344
+        ]
+      },
+      "mean_abs_Q": {
+        "mean": 0.7902777777777777,
+        "sem": 0.07027777777777776,
+        "run_means": [
+          0.8605555555555555,
+          0.72
+        ]
+      },
+      "signed_Q": {
+        "mean": 0.24527777777777776,
+        "sem": 0.6152777777777778,
+        "run_means": [
+          0.8605555555555555,
+          -0.37
+        ]
+      }
+    }
+  ]
+}

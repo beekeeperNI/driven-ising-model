@@ -1,0 +1,18 @@
+test_hamiltonian_and_actual_local_energy_expression (test_physics.DynamicsTests.test_hamiltonian_and_actual_local_energy_expression) ... ok
+test_original_function_bodies_preserved (test_physics.DynamicsTests.test_original_function_bodies_preserved) ... ok
+test_original_input_validation (test_physics.DynamicsTests.test_original_input_validation) ... ok
+test_periodic_edges_and_known_states (test_physics.DynamicsTests.test_periodic_edges_and_known_states) ... ok
+test_seeded_trajectories_against_original (test_physics.DynamicsTests.test_seeded_trajectories_against_original) ... ok
+test_supplied_lattice_final_state_and_field_timing (test_physics.DynamicsTests.test_supplied_lattice_final_state_and_field_timing) ... ok
+test_zero_field_spin_inversion (test_physics.DynamicsTests.test_zero_field_spin_inversion) ... ok
+test_abs_before_cycle_average (test_physics.ObservableTests.test_abs_before_cycle_average) ... ok
+test_against_original_observables (test_physics.ObservableTests.test_against_original_observables) ... ok
+test_constant_magnetization_closed_work (test_physics.ObservableTests.test_constant_magnetization_closed_work) ... ok
+test_incomplete_or_mismatched_cycles_rejected (test_physics.ObservableTests.test_incomplete_or_mismatched_cycles_rejected) ... ok
+test_work_sign_and_trapezoid_are_distinct (test_physics.ObservableTests.test_work_sign_and_trapezoid_are_distinct) ... ok
+test_full_configuration_matches_notebook_cell_5 (test_reproduction_protocol.RecoveredProtocolTests.test_full_configuration_matches_notebook_cell_5) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 1.076s
+
+OK

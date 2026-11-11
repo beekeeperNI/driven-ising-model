@@ -1,0 +1,14 @@
+{
+  "elapsed_seconds": 0.6808455418795347,
+  "python": "3.14.7",
+  "packages": {
+    "numpy": "2.5.2",
+    "numba": "0.68.1",
+    "matplotlib": "3.11.1"
+  },
+  "source_sha256": {
+    "src/ising.py": "dca654b6b7638aaa769a44b162d661ec7028dc8e415634fad653ed6ece9ebce9",
+    "src/observables.py": "f58214b89f8d23bbf6917bfebe968e996f516e90e21d88b958110243e948977d",
+    "scripts/reproduce_period_scan.py": "680438ab2035f6fc727dfc4c49e29451eb585542b68171cce17aaedb4250290b"
+  }
+}
