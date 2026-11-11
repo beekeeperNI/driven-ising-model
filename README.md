@@ -5,6 +5,10 @@
 
 This project studies how a two-dimensional ferromagnetic Ising model responds to a time-dependent external magnetic field. We use **single-spin-flip Metropolis dynamics** to explore magnetization reversal, hysteresis, temperature dependence, and finite-size behavior. Numerical validation and the accompanying research note are **in progress**. Nothing shown here should yet be interpreted as proof of a dynamic phase transition or as a verified thermodynamic-limit result.
 
+## All Simulator animations
+
+**[Open the animation gallery / 打开全部 8 个动图的独立预览](assets/demos/notebook/README.md)** — spin configurations, temperature response, all four hysteresis periods, period scanning, and multi-temperature playback. Each animation has its own preview page and downloadable GIF.
+
 ## Demo: three driving cycles
 
 ![Three-cycle hysteresis demo at P=125](assets/demos/hysteresis_P125.gif)
@@ -16,7 +20,7 @@ Other actual animated demonstrations:
 - [Three-cycle hysteresis at P=50](assets/demos/hysteresis_P50.gif)
 - [Temperature comparison and field-step response](assets/demos/temperature_field_response.gif) — **field step**, not sinusoidal periodic driving
 
-The GIFs and PNGs in this repository are **regenerated** by [`tools/generate_demo_assets.py`](tools/generate_demo_assets.py), calling the existing Metropolis core from the original notebook. Parameters and random seeds are fixed in that script; these are not necessarily pixel-identical copies of earlier exploratory screenshots. No synthetic example measurements replace simulation output.
+The legacy GIFs in `assets/demos/` and exploratory PNGs are **regenerated** by [`tools/generate_demo_assets.py`](tools/generate_demo_assets.py), calling the existing Metropolis core from the original notebook. Parameters and random seeds are fixed in that script; these are not necessarily pixel-identical copies of earlier exploratory screenshots. No synthetic example measurements replace simulation output.
 
 ## Research question and model
 

@@ -1,0 +1,8 @@
+{
+  "gifs_checked": 8,
+  "all_frames_decoded": true,
+  "all_loop_forever": true,
+  "all_have_changing_frames": true,
+  "relative_gallery_links_resolve": true,
+  "original_snapshot_trajectory_assertions_passed": true
+}
