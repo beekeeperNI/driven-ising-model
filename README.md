@@ -5,9 +5,8 @@
 
 A computational study of magnetization, hysteresis, dynamic order, temperature dependence, and finite-size effects in the periodically driven two-dimensional Ising model. This repository connects the **research note**, the **Metropolis simulator**, its **numerical checks**, and **animated demonstrations**.
 
-**Start here:** [Research note overview](paper/README.md) · [Latest simulation notebook](notebooks/Simulator.ipynb) · [Full animation gallery](assets/demos/notebook/README.md) · [Validation status](docs/validation_status.md)
-
-> **Publication status:** The 35-page research note has been finalized outside GitHub, but its PDF has not yet been uploaded to this repository. The research overview and abstract are available in [`paper/README.md](paper/README.md). Existing figure assets are retained as exploratory records and should not be mistaken for the final paper's figures.
+**Read the full research note:** [**Nonequilibrium Dynamics of the Two-Dimensional Ising Model Under Periodic Magnetic Driving (PDF)**](paper/research_note.pdf)  
+[Latest simulator notebook](notebooks/Simulator.ipynb) · [Animation gallery](assets/demos/notebook/README.md) · [Numerical validation](docs/validation_status.md)
 
 ## Research question
 
@@ -88,7 +87,7 @@ The repository also retains an **older, independently regenerated** single-condi
 | [`tools/generate_demo_assets.py`](tools/generate_demo_assets.py) | Generator for *historical exploratory* figures and some legacy animations |
 | [`tools/export_notebook_gifs.py`](tools/export_notebook_gifs.py) | Exporter for the existing gallery, with caveats in the gallery README |
 | [`assets/validation/`](assets/validation/) and [`results/`](results/) | Legacy single-condition energy-validation figures and numerical data |
-| [`paper/`](paper/README.md) | Research-note abstract, publication status, and earlier drafting material |
+| [Final research note (PDF)](paper/research_note.pdf) | Complete manuscript, including numerical validation, physical results, limitations, and references |
 
 To run the notebook locally:
 
