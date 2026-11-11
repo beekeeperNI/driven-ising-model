@@ -1,11 +1,9 @@
-# 多温度比较与周期扫描
+# Multi-temperature response and period sweep
 
-Multi-temperature period explorer
+[← Back to the gallery](README.md) · [Open or download GIF](multi_temperature_period_explorer.gif)
 
-[← 返回动画图册](README.md) · [单独打开 / 下载 GIF](multi_temperature_period_explorer.gif)
+![Multi-temperature response and period sweep](multi_temperature_period_explorer.gif)
 
-![Multi-temperature period explorer](multi_temperature_period_explorer.gif)
+Automatically plays through the original 22 period options, with all temperatures selected as in the default view: T=1.5, 1.8, 2.0, 2.3. L=40, h0=0.5, seed=101; 20 cycles per run, with the first 10 discarded. W retains the original signed field-work definition.
 
-按原来的 22 个周期选项自动播放，保留默认的全部温度选中状态：T=1.5、1.8、2.0、2.3。L=40, h0=0.5, seed=101；20 个周期、丢弃前 10 个；W 沿用原图的带符号场功定义。
-
-这是原 notebook 演示的导出版本，用于观看动态过程；不新增平衡或收敛结论。
+This export illustrates the original notebook demonstration. It does not establish additional equilibration or convergence results.

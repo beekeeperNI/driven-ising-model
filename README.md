@@ -7,7 +7,7 @@ This project studies how a two-dimensional ferromagnetic Ising model responds to
 
 ## All Simulator animations
 
-**[Open the animation gallery / 打开全部 8 个动图的独立预览](assets/demos/notebook/README.md)** — spin configurations, temperature response, all four hysteresis periods, period scanning, and multi-temperature playback. Each animation has its own preview page and downloadable GIF.
+**[Open the animation gallery — individual previews of all 8 GIFs](assets/demos/notebook/README.md)** — spin configurations, temperature response, all four hysteresis periods, period scanning, and multi-temperature playback. Each animation has its own preview page and downloadable GIF.
 
 ## Demo: three driving cycles
 
