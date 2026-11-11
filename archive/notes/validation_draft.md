@@ -1,5 +1,7 @@
 # Draft — Numerical Validation, Part 1
 
+> Archived drafting material. The approximate means quoted below were transcribed from an earlier figure, not regenerated from a linked measurement cache. Retain this text as drafting history; use the [current validation status](../../docs/validation_status.md) and [final research note](../../paper/research_note.pdf) for the current interpretation.
+
 *Working text from the research-note drafting process. Figures and conclusions are preliminary; text has not undergone final scientific review.*
 
 ## Equilibration and Initial-State Independence
@@ -10,7 +12,7 @@ For the given conditions, L = 40 and T = 2, we found that the energy per spin ap
 
 After a sufficiently long time, both systems fluctuate around approximately the same mean energy due to thermal fluctuations. We choose a burn-in cutoff of 5000 MCS, meaning that the first 5000 sweeps are discarded when calculating the equilibrium averages.
 
-![Raw energy](../assets/validation/01_raw_energy_L40_T2.png)
+![Raw energy](../../assets/validation/01_raw_energy_L40_T2.png)
 
 ### Figure 2 — Ensemble Relaxation
 
@@ -20,7 +22,7 @@ We can see that the results are consistent with our observation in the first gra
 
 This provides further evidence that the energy of the system becomes less dependent on its initial configuration after sufficient equilibration.
 
-![250-MCS block means](../assets/validation/02_block_relaxation_L40_T2.png)
+![250-MCS block means](../../assets/validation/02_block_relaxation_L40_T2.png)
 
 ### Figure 3 — Retained Mean Energy
 
@@ -32,7 +34,7 @@ We find that the mean energies from the two groups are very close, approximately
 
 This suggests that, under the given conditions, the equilibrium mean energy is consistent between the two initial states.
 
-![Retained mean energy](../assets/validation/03_retained_energy_L40_T2.png)
+![Retained mean energy](../../assets/validation/03_retained_energy_L40_T2.png)
 
 ### Figure 4 — Late-Time Drift
 
@@ -48,7 +50,7 @@ If the energy statistics are stable, we expect this difference to be close to ze
 
 We can see from the graph that the results for both initial states are consistent with zero drift within their uncertainties. This suggests that there is no statistically detectable systematic change in the mean energy during the retained measurement period.
 
-![Late drift](../assets/validation/04_late_drift_L40_T2.png)
+![Late drift](../../assets/validation/04_late_drift_L40_T2.png)
 
 ### Conclusion
 

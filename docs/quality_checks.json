@@ -15,5 +15,14 @@
     "numba": "0.68.1",
     "matplotlib": "3.11.1",
     "scipy": "1.18.1"
-  }
+  },
+  "readme_relative_links_checked": 17,
+  "documentation_relative_links_checked": 76,
+  "relative_link_errors": [],
+  "original_notebook_git_blob": "00ab943384f17cf46e433062da87533ea8a40930",
+  "original_pdf_git_blob": "fa9378492a8c1d173145b8c05c28b081d8e0eb56",
+  "three_figures_identical_to_pdf_embedded_images": true,
+  "authors_note_matches_supplied_text": true,
+  "authors_note_is_final_section": true,
+  "smoke_source_hashes_match_current_code": true
 }

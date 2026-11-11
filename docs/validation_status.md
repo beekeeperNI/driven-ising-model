@@ -13,7 +13,7 @@ This document distinguishes the **broader tests reported in the final research n
 | Hysteresis response | Signed work peaks near `P=125` on the period grid; comparisons with neighboring periods are positive within reported intervals. | Not a continuous optimization of the peak and not validation of every temperature/size. |
 | Finite-size reliability | At `P=50,T=2`, additional 3,000-MCS burn-in / 6,000-MCS measurement tests with eight seeds per initial state preserve substantial size variation in mean absolute `Q`. | Only three sizes and finite time windows; no thermodynamic-limit claim. |
 
-The full figures V1 and V2, plus F1–F3, are discussed in the research note. The final paper figures and their precise source data are **not yet published as separate files in this repository**.
+The full figures V1 and V2, plus F1–F3, are discussed in the research note. Figures 6, 12, and F1 are now available as [lossless image extractions](../assets/figures/README.md). These image files do not supply their original machine-readable measurements.
 
 **Observables:** The early period/temperature scans use the mean absolute trapezoidal cycle integral. The dedicated work checks and finite-size scan use signed discrete field work. Do not interchange them or infer dissipation from a mean absolute integral without qualification.
 
@@ -34,9 +34,17 @@ These are regenerated **historical exploratory** results and should not be cited
 
 ## Outstanding reproducibility work
 
-- Publish final PDF and, if available, the matching final LaTeX project.
+- The final PDF is published unchanged. Deposit the matching final LaTeX project if it becomes available.
 - Add the exact scripts/data/manifests behind every final report figure; the earlier PNGs are not guaranteed to use the same parameters and averaging protocol.
-- Run the updated 25-cell notebook in a fresh environment, resolve any cell-order dependencies, and document failed cells or software version requirements.
+- The extracted simulator and focused reproduction script are tested independently. The preserved 25-cell exploratory notebook has not been executed end-to-end in a fresh session; its cell-order dependencies remain documented.
 - Validate more long-time dynamics at very short periods, larger lattices, and additional temperatures where scientifically useful.
 
 See [Research Note](../paper/README.md) for abstract and scope and [Main README](../README.md) for the project's current entry point.
+
+## Checks added during the portfolio refactor
+
+These are implementation/reproduction checks, separate from the physical validation summarized above. Thirteen targeted tests pass, including 156 local-energy consistency comparisons, periodic boundaries (including the L=2 repeated-bond convention), all three initial-state choices, fixed-seed reproducibility, cycle-integral signs, absolute-value ordering, and the exact settings recovered from notebook cell 5. Thirty-six seeded h/m trajectories match the original core bitwise in the tested runtime. Original function syntax trees are also unchanged.
+
+The reproduction smoke mode completed four short runs (420 MCS total, L=6). Redrawing its cache reproduced the same statistics without changing raw measurements. It does not test the physical location of the hysteresis peak. The full Figure 6 protocol was not rerun as part of this presentation-focused update.
+
+See [test output](test_results.txt), [check summary and tested versions](quality_checks.json), and [reproduction limitations](reproducibility.md). The earlier exact/periodic-state package remains on [its separate validation branch](https://github.com/beekeeperNI/driven-ising-model/tree/validation/finalize-numerical-validation-20261107/validation); the portfolio branch does not silently merge or reinterpret it.
